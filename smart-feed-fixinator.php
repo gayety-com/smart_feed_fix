@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Smart Feed Fixinator
+Plugin Name: 00 Gayety Custom - Smart Feed Fixinator
 Description: Forces full post content and adds the featured image to RSS <content:encoded> feeds.
 Version: 1.0
 Author: Jeff Kaufman
