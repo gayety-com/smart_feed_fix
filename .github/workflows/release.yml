@@ -35,7 +35,7 @@ jobs:
           git push origin $TAG
 
       - name: Create ZIP file
-        run: zip -r gayety-excerpt-shortcode.zip .
+        run: zip -r smart_feed_fix.zip .
 
       - name: Create GitHub Release
         id: create_release
