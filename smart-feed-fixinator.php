@@ -52,8 +52,8 @@ function gfi_force_full_content_in_feed($content) {
             </snf:analytics>
             XML;
 
-        //$content .= "\n" . $analytics_block;
-        $content = $post->post_content;
+        $content .= "\n" . $analytics_block;
+
         // Make sure the content is wrapped in CDATA for proper RSS format
         echo $content;
     }
