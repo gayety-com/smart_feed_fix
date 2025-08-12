@@ -53,7 +53,7 @@ function gfi_force_full_content_in_feed($content) {
             XML;
 
         //$content .= "\n" . $analytics_block;
-        $content = "test";
+        $content = $post->post_content;
         // Make sure the content is wrapped in CDATA for proper RSS format
         echo $content;
     }
