@@ -2,9 +2,17 @@
 /*
 Plugin Name: 00 Gayety Custom - Smart Feed Fixinator
 Description: Forces full post content and adds the featured image to RSS <content:encoded> feeds.
-Version: 1.0
+Version: 1.1
 Author: Jeff Kaufman
 */
+
+// Modify the main feed query to include 'video' post type alongside 'post'
+add_action('pre_get_posts', function($query) {
+    if ($query->is_feed() && $query->is_main_query()) {
+        // Include 'post' and 'video' post types in feeds
+        $query->set('post_type', ['post', 'video']);
+    }
+});
 
 add_filter('the_content_feed', 'gfi_force_full_content_in_feed', 10, 2);
 
