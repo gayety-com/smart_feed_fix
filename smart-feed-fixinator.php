@@ -41,6 +41,21 @@ function gfi_force_full_content_in_feed($content) {
             $content = $img_tag . $content;
         }
 
+        // If post type is 'video', append iframe
+        if ($post->post_type === 'video') {
+            $video_id = get_post_meta($post->ID, '_jwppp-video-url-1', true);
+
+            if ($video_id) {
+                $iframe_tag = '<div style="position:relative;overflow:hidden;padding-bottom:56.25%">' .
+                    '<iframe src="https://cdn.jwplayer.com/players/' . esc_attr($video_id) . '-sh4SrN1s.html" ' .
+                    'width="100%" height="100%" frameborder="0" scrolling="auto" ' .
+                    'title="' . esc_attr(get_the_title($post)) . '" style="position:absolute;" allowfullscreen>' .
+                    '</iframe></div>';
+
+                $content .= $iframe_tag;
+            }
+        }
+
         // Make sure the content is wrapped in CDATA for proper RSS format
         echo $content;
     }
