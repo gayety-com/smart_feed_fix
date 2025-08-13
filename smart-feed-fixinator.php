@@ -35,7 +35,7 @@ function gfi_force_full_content_in_feed($content) {
 		
 		$featured_image_url = get_the_post_thumbnail_url($post, 'full');
 
-        if ($featured_image_url) {
+        if ($featured_image_url && $post->post_type === 'post') {
             // Prepend the featured image to the content
             $img_tag = '<p><img src="' . esc_url($featured_image_url) . '" alt="' . esc_attr(get_the_title($post)) . '" /></p>';
             $content = $img_tag . $content;
@@ -51,8 +51,7 @@ function gfi_force_full_content_in_feed($content) {
                     'width="100%" height="100%" frameborder="0" scrolling="auto" ' .
                     'title="' . esc_attr(get_the_title($post)) . '" style="position:absolute;" allowfullscreen>' .
                     '</iframe></div>';
-
-                $content .= $iframe_tag;
+                $content = $iframe_tag . $content;
             }
         }
 
