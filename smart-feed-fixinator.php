@@ -47,7 +47,7 @@ function gfi_force_full_content_in_feed($content) {
 
             if ($video_id) {
                 $iframe_tag = '<div style="position:relative;overflow:hidden;padding-bottom:56.25%">' .
-                    '<iframe src="https://cdn.jwplayer.com/players/' . esc_attr($video_id) . '-sh4SrN1s.html" ' .
+                    '<iframe src="https://cdn.jwplayer.com/players/' . esc_attr($video_id) . '-8HOtRp98.html" ' .
                     'width="100%" height="100%" frameborder="0" scrolling="auto" ' .
                     'title="' . esc_attr(get_the_title($post)) . '" style="position:absolute;" allowfullscreen>' .
                     '</iframe></div>';
